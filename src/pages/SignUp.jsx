@@ -69,7 +69,7 @@ export default function SignUp() {
                 </MyInput>
 
                 <MyInput
-                  name="first name"
+                  name="last name"
                   type="text"
                   width="w-full"
                   paWidth="lg:w-[48%]"
@@ -83,7 +83,7 @@ export default function SignUp() {
               </MyInput>
 
               <MyInput
-                name="confirm password"
+                name="password"
                 type={show ? "text" : "password"}
                 width="w-full"
                 paWidth="lg:w-[96%]"
@@ -99,7 +99,7 @@ export default function SignUp() {
                 </div>
               </MyInput>
               <MyInput
-                name="password"
+                name="confirm password"
                 type={show ? "text" : "password"}
                 width="w-full"
                 paWidth="lg:w-[96%]"

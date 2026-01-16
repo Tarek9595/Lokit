@@ -31,7 +31,7 @@ export default function Reset() {
 
             <MyForm className="w-full" mygap="gap-8">
               <MyInput
-                name="confirm password"
+                name="new password"
                 type={show ? "text" : "password"}
                 width="w-full"
                 paWidth="lg:w-[96%]"
@@ -47,7 +47,7 @@ export default function Reset() {
                 </div>
               </MyInput>
               <MyInput
-                name="password"
+                name="confirm new password"
                 type={show ? "text" : "password"}
                 width="w-full"
                 paWidth="lg:w-[96%]"

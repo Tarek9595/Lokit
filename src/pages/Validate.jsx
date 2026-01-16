@@ -45,7 +45,7 @@ export default function ForgetPass() {
                     width="w-full"
                     bgColor="bg-darky"
                     color="text-white"
-                    name="Send"
+                    name="Next"
                   />
                 </Link>
                 <Link to="/signin" className="lg:w-[48%]">
