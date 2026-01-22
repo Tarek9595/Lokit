@@ -15,23 +15,24 @@ export default function Colors() {
   ];
 
   return (
-    <div className="grid grid-cols-7 gap-1">
+    <div className="grid grid-cols-7 gap-y-3 gap-x-2 w-fit">
       {colors.map((color) => (
-        <label key={color} className="cursor-pointer">
-          <input type="radio" name="size" className="hidden peer" />
+        <label
+          key={color}
+          className="cursor-pointer flex justify-center items-center"
+        >
+          <input type="radio" name="product-color" className="hidden peer" />
           <div
-            className={`
-          btn btn-outline  w-[85%] h-6
-          border-2
-          border-transparent     
-          peer-checked:border-black
-          rounded-none
-          hover:bg-transparent
-          p-1
-        `}
+            className="
+              w-6.25 h-6.25 
+              flex justify-center items-center
+              border-2 border-transparent
+              peer-checked:border-black 
+              transition-all duration-200
+            "
           >
             <div
-              className="w-[95%] h-[95%]"
+              className="w-4.25 h-4.25"
               style={{ backgroundColor: color }}
             ></div>
           </div>

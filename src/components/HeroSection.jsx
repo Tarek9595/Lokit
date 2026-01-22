@@ -6,8 +6,8 @@ import saleImg from "../assets/img/home-pics/sale.png";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-screen bg-white px-10 py-20 flex items-center justify-center">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center max-w-7xl mx-auto">
+    <section className="relative w-full bg-white px-10 py-20 flex items-center justify-center">
+      <div className="container grid grid-cols-1 lg:grid-cols-3 gap-8 items-center max-w-7xl mx-auto">
         <div className="lg:flex justify-center hidden">
           <img
             src={leftImg}

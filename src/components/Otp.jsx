@@ -27,7 +27,7 @@ export default function Otp({ length = 6, onComplete }) {
   };
 
   return (
-    <div className="flex gap-5">
+    <div className="grid grid-cols-6 gap-2 sm:gap-4 w-full max-w-90 mx-auto">
       {otp.map((digit, index) => (
         <input
           key={index}
@@ -38,14 +38,14 @@ export default function Otp({ length = 6, onComplete }) {
           value={digit}
           onChange={(e) => handleChange(e.target.value, index)}
           onKeyDown={(e) => handleKeyDown(e, index)}
-          className="
-            
-            w-12 h-14
-            text-center text-2xl
+          className="w-full h-12 sm:h-14
+            text-center text-xl sm:text-2xl
             border-b-2 border-[#212a2f4d]
             rounded-none
             focus:border-darky
             focus:outline-none
+            transition-colors
+            bg-transparent
           "
         />
       ))}

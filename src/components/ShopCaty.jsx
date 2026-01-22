@@ -131,58 +131,64 @@ export default function ShopCaty() {
           );
         })}
       </div>
-      <div className="w-full h-[200dvh] overflow-auto bg-[#4444440A] grid lg:grid-cols-2 xl:grid-cols-3 place-items-center gap-12.5">
-        {products.map((el, index) => {
-          return (
-            <div
-              key={index}
-              className="lg:w-100 h-96.25 bg-white rounded-[10px] py-3.75 px-6.25 flex flex-col gap-3"
-            >
-              <div className="w-full h-61 relative">
-                <img src={el.img} alt="girl" className="object-contain" />
-                <div
-                  className="w-8 h-8 rounded-full bg-white flex justify-center items-center absolute top-2 right-7 shadow-md cursor-pointer"
-                  onClick={() => toggleLike(index)}
-                >
-                  {likedItems[index] ? (
-                    <IoMdHeart className="text-darky text-[20px]" />
-                  ) : (
-                    <IoIosHeartEmpty className="text-darky text-[20px]" />
-                  )}
-                </div>
-              </div>
-              <div className="w-full flex flex-col gap-5">
-                <div className="w-[95%] flex justify-between  ">
-                  <div className="flex flex-col gap-2.5">
-                    <h1 className="text-darky font-medium font-montserrat text-[20px]  w-45 truncate">
-                      {el.catName}
-                    </h1>
-                    <p className="text-gray-400 text-sm">{el.brand}</p>
-                  </div>
-                  <div className="text-[16px] flex gap-1  text-darky w-fit h-fit ">
-                    <MdOutlineStar />
-                    <MdOutlineStar />
-                    <MdOutlineStar />
-                    <MdOutlineStar />
-                    <MdOutlineStar />
+      <div className="w-full bg-[#4444440A] py-10">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-10 gap-x-6 place-items-center">
+          {products.map((el, index) => {
+            return (
+              <div
+                key={index}
+                className="w-full max-w-87.5 bg-white rounded-xl p-4 flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="w-full h-75 relative bg-[#F9F9F9] rounded-lg overflow-hidden">
+                  <img
+                    src={el.img}
+                    alt={el.catName}
+                    className="w-full h-full object-cover"
+                  />
+                  <div
+                    className="w-8 h-8 rounded-full bg-white flex justify-center items-center absolute top-2 right-7 shadow-md cursor-pointer"
+                    onClick={() => toggleLike(index)}
+                  >
+                    {likedItems[index] ? (
+                      <IoMdHeart className="text-darky text-[20px]" />
+                    ) : (
+                      <IoIosHeartEmpty className="text-darky text-[20px]" />
+                    )}
                   </div>
                 </div>
-                <div className="w-[95%] flex justify-between items-center font-montserrat">
-                  <span className="text-darky font-medium text-[24px]">
-                    ${el.price}
-                  </span>
-                  {el.soldOut ? (
-                    <span className="text-red-600 font-normal text-[12px] tracking-wide">
-                      Almost Sold Out
+                <div className="flex flex-col gap-2">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h1 className="text-darky font-semibold font-montserrat text-[18px] leading-tight">
+                        {el.catName}
+                      </h1>
+                      <p className="text-gray-400 text-sm">{el.brand}</p>
+                    </div>
+                    <div className="flex text-darky text-sm">
+                      <MdOutlineStar />
+                      <MdOutlineStar />
+                      <MdOutlineStar />
+                      <MdOutlineStar />
+                      <MdOutlineStar />
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center mt-2">
+                    <span className="text-darky font-bold text-[22px]">
+                      ${el.price}
                     </span>
-                  ) : (
-                    ""
-                  )}
+                    {el.soldOut ? (
+                      <span className="text-red-500 text-[11px] font-medium uppercase tracking-tighter">
+                        Almost Sold Out
+                      </span>
+                    ) : (
+                      ""
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ export default function Sizes() {
     <div className="grid grid-cols-5 gap-2">
       {sizes.map((size) => (
         <label key={size} className="group cursor-pointer">
-          <input type="radio" name="size" className="hidden peer" />
+          <input type="radio" name="size-inches" className="hidden peer" />
           <div
             className="
           btn btn-outline btn-sm w-full 

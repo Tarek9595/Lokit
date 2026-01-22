@@ -8,13 +8,10 @@ import imgSix from "../assets/img/shop/shop-6.png";
 import imgSeven from "../assets/img/shop/shop-7.png";
 import imgEight from "../assets/img/shop/shop-8.png";
 import imgNine from "../assets/img/shop/shop-9.png";
-import { IoIosHeartEmpty, IoMdHeart } from "react-icons/io";
 import { MdOutlineStar, MdOutlineStarBorder } from "react-icons/md";
 import { IoSearchOutline } from "react-icons/io5";
 
 export default function SearchShoping() {
-  const [likedItems, setLikedItems] = useState({});
-
   const products = [
     {
       catName: "Nike Women’s Tracksuit",
@@ -90,73 +87,60 @@ export default function SearchShoping() {
     },
   ];
 
-  const toggleLike = (index) => {
-    setLikedItems((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
-  };
   return (
-    <div className="grow flex flex-col items-center gap-8 p-5 md:p-24">
-      <div className="w-full">
-        <label className="input input-bordered flex items-center gap-3 w-full h-12 rounded-xl">
+    <div className="grow flex flex-col gap-8 p-5 md:p-10 lg:p-16">
+      <div className="w-full max-w-300 mx-auto">
+        <label className="input input-bordered flex items-center gap-3 w-full h-12 rounded-xl border-[#9797973D]">
           <IoSearchOutline className="text-gray-400 text-[18px]" />
           <input type="text" className="grow" placeholder="Search clothes..." />
         </label>
       </div>
-      <div className="flex flex-col gap-12.5">
-        <div className="w-full h-dvh overflow-auto bg-[#4444440A] grid lg:grid-cols-1 xl:grid-cols-2 place-items-center gap-12.5">
-          {products.map((el, index) => {
-            return (
-              <div
-                key={index}
-                className="lg:w-100 h-96.25 bg-white rounded-[10px] py-3.75 px-6.25 flex flex-col gap-3"
-              >
-                <div className="w-full h-61 relative">
-                  <img src={el.img} alt="girl" className="object-contain" />
-                  <div
-                    className="w-8 h-8 rounded-full bg-white flex justify-center items-center absolute top-2 right-7 shadow-md cursor-pointer"
-                    onClick={() => toggleLike(index)}
-                  >
-                    {likedItems[index] ? (
-                      <IoMdHeart className="text-darky text-[20px]" />
-                    ) : (
-                      <IoIosHeartEmpty className="text-darky text-[20px]" />
-                    )}
+
+      <div className="w-full bg-[#4444440A] rounded-xl p-6 md:p-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-10 justify-items-center">
+          {products.map((el, index) => (
+            <div
+              key={index}
+              className="w-full max-w-95 bg-white rounded-[20px] p-5 flex flex-col gap-4 shadow-sm hover:shadow-md transition-all"
+            >
+              <div className="w-full  relative bg-[#F9F9F9] rounded-xl flex justify-center items-center overflow-hidden">
+                <img
+                  src={el.img}
+                  alt={el.catName}
+                  className="object-cover transition-transform hover:scale-105"
+                />
+              </div>
+
+              <div className="flex flex-col gap-4 px-1">
+                <div className="flex justify-between items-start gap-2">
+                  <div className="flex flex-col gap-1">
+                    <h1 className="text-darky font-semibold font-montserrat text-[18px] leading-tight truncate w-40 md:w-45">
+                      {el.catName}
+                    </h1>
+                    <p className="text-gray-400 text-sm">{el.brand}</p>
+                  </div>
+                  <div className="flex text-darky text-[14px] pt-1">
+                    <MdOutlineStar />
+                    <MdOutlineStar />
+                    <MdOutlineStar />
+                    <MdOutlineStar />
+                    <MdOutlineStar />
                   </div>
                 </div>
-                <div className="w-full flex flex-col gap-5">
-                  <div className="w-[95%] flex justify-between  ">
-                    <div className="flex flex-col gap-2.5">
-                      <h1 className="text-darky font-medium font-montserrat text-[20px]  w-45 truncate">
-                        {el.catName}
-                      </h1>
-                      <p className="text-gray-400 text-sm">{el.brand}</p>
-                    </div>
-                    <div className="text-[16px] flex gap-1  text-darky w-fit h-fit ">
-                      <MdOutlineStar />
-                      <MdOutlineStar />
-                      <MdOutlineStar />
-                      <MdOutlineStar />
-                      <MdOutlineStar />
-                    </div>
-                  </div>
-                  <div className="w-[95%] flex justify-between items-center font-montserrat">
-                    <span className="text-darky font-medium text-[24px]">
-                      ${el.price}
+
+                <div className="flex justify-between items-center">
+                  <span className="text-darky font-bold text-[22px]">
+                    ${el.price}
+                  </span>
+                  {el.soldOut && (
+                    <span className="text-red-500 text-[10px] font-bold uppercase tracking-tight bg-red-50 px-2 py-1 rounded">
+                      Almost Sold Out
                     </span>
-                    {el.soldOut ? (
-                      <span className="text-red-600 font-normal text-[12px] tracking-wide">
-                        Almost Sold Out
-                      </span>
-                    ) : (
-                      ""
-                    )}
-                  </div>
+                  )}
                 </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </div>
