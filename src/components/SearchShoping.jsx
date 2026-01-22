@@ -1,4 +1,3 @@
-import { useState } from "react";
 import imgOne from "../assets/img/shop/shop-1.png";
 import imgTwo from "../assets/img/shop/shop-2.png";
 import imgThree from "../assets/img/shop/shop-3.png";
@@ -10,9 +9,229 @@ import imgEight from "../assets/img/shop/shop-8.png";
 import imgNine from "../assets/img/shop/shop-9.png";
 import { MdOutlineStar, MdOutlineStarBorder } from "react-icons/md";
 import { IoSearchOutline } from "react-icons/io5";
+import Pagination from "./Pagination";
 
 export default function SearchShoping() {
   const products = [
+    {
+      catName: "Nike Women’s Tracksuit",
+      brand: "Nike",
+      price: "95.50",
+      rate: 5,
+      soldOut: false,
+      img: imgOne,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Zara",
+      price: "980.00",
+      rate: 4,
+      soldOut: false,
+      img: imgTwo,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Zara",
+      price: "300.50",
+      rate: 4,
+      soldOut: false,
+      img: imgThree,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Gucci",
+      price: "30.500",
+      rate: 5,
+      soldOut: false,
+      img: imgFour,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Zara",
+      price: "200.00",
+      rate: 5,
+      soldOut: false,
+      img: imgFive,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Nike",
+      price: "100.00",
+      rate: 4,
+      soldOut: true,
+      img: imgSix,
+    },
+    {
+      catName: "Nike Women’s Tracksuit",
+      brand: "Nike",
+      price: "95.50",
+      rate: 5,
+      soldOut: false,
+      img: imgSeven,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Zara",
+      price: "980.00",
+      rate: 4,
+      soldOut: false,
+      img: imgEight,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Zara",
+      price: "300.50",
+      rate: 4,
+      soldOut: false,
+      img: imgNine,
+    },
+  ];
+
+  const products2 = [
+    {
+      catName: "Nike Women’s Tracksuit",
+      brand: "Nike",
+      price: "95.50",
+      rate: 5,
+      soldOut: false,
+      img: imgOne,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Zara",
+      price: "980.00",
+      rate: 4,
+      soldOut: false,
+      img: imgTwo,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Zara",
+      price: "300.50",
+      rate: 4,
+      soldOut: false,
+      img: imgThree,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Gucci",
+      price: "30.500",
+      rate: 5,
+      soldOut: false,
+      img: imgFour,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Zara",
+      price: "200.00",
+      rate: 5,
+      soldOut: false,
+      img: imgFive,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Nike",
+      price: "100.00",
+      rate: 4,
+      soldOut: true,
+      img: imgSix,
+    },
+    {
+      catName: "Nike Women’s Tracksuit",
+      brand: "Nike",
+      price: "95.50",
+      rate: 5,
+      soldOut: false,
+      img: imgSeven,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Zara",
+      price: "980.00",
+      rate: 4,
+      soldOut: false,
+      img: imgEight,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Zara",
+      price: "300.50",
+      rate: 4,
+      soldOut: false,
+      img: imgNine,
+    },
+    {
+      catName: "Nike Women’s Tracksuit",
+      brand: "Nike",
+      price: "95.50",
+      rate: 5,
+      soldOut: false,
+      img: imgOne,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Zara",
+      price: "980.00",
+      rate: 4,
+      soldOut: false,
+      img: imgTwo,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Zara",
+      price: "300.50",
+      rate: 4,
+      soldOut: false,
+      img: imgThree,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Gucci",
+      price: "30.500",
+      rate: 5,
+      soldOut: false,
+      img: imgFour,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Zara",
+      price: "200.00",
+      rate: 5,
+      soldOut: false,
+      img: imgFive,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Nike",
+      price: "100.00",
+      rate: 4,
+      soldOut: true,
+      img: imgSix,
+    },
+    {
+      catName: "Nike Women’s Tracksuit",
+      brand: "Nike",
+      price: "95.50",
+      rate: 5,
+      soldOut: false,
+      img: imgSeven,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Zara",
+      price: "980.00",
+      rate: 4,
+      soldOut: false,
+      img: imgEight,
+    },
+    {
+      catName: "Roller Rabbit",
+      brand: "Zara",
+      price: "300.50",
+      rate: 4,
+      soldOut: false,
+      img: imgNine,
+    },
     {
       catName: "Nike Women’s Tracksuit",
       brand: "Nike",
@@ -143,6 +362,8 @@ export default function SearchShoping() {
           ))}
         </div>
       </div>
+
+      <Pagination />
     </div>
   );
 }

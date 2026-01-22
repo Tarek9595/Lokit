@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FaBell } from "react-icons/fa";
 
 import Button from "./Button";
@@ -7,27 +7,63 @@ import Lang from "./Lang";
 export default function LargeNav() {
   let navLg = "lg:flex lg:items-center lg:gap-10";
   let navSm = "hidden";
-  let linkStyle = "text-darky text-[16px] font-montserrat font-normal ";
+
   return (
     <div className={`${navLg} ${navSm}`}>
       <nav className="flex items-center gap-8">
-        <Link className={linkStyle} to="/">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `text-[16px] font-montserrat font-normal pb-0.5 transition-all ${
+              isActive
+                ? "text-darky border-b-2 border-darky font-semibold"
+                : "text-gray-500 hover:text-darky"
+            }`
+          }
+        >
           Home
-        </Link>
-        <Link className={linkStyle} to="/search">
+        </NavLink>
+        <NavLink
+          to="/search"
+          className={({ isActive }) =>
+            `text-[16px] font-montserrat font-normal pb-0.5 transition-all ${
+              isActive
+                ? "text-darky border-b-2 border-darky font-semibold"
+                : "text-gray-500 hover:text-darky"
+            }`
+          }
+        >
           Search
-        </Link>
-        <Link className={linkStyle} to="/wishlist">
+        </NavLink>
+        <NavLink
+          to="/wishlist"
+          className={({ isActive }) =>
+            `text-[16px] font-montserrat font-normal pb-0.5 transition-all ${
+              isActive
+                ? "text-darky border-b-2 border-darky font-semibold"
+                : "text-gray-500 hover:text-darky"
+            }`
+          }
+        >
           Wishlist
-        </Link>
-        <Link className={linkStyle} to="/mycart">
+        </NavLink>
+        <NavLink
+          to="/mycart"
+          className={({ isActive }) =>
+            `text-[16px] font-montserrat font-normal pb-0.5 transition-all ${
+              isActive
+                ? "text-darky border-b-2 border-darky font-semibold"
+                : "text-gray-500 hover:text-darky"
+            }`
+          }
+        >
           My Cart
-        </Link>
+        </NavLink>
         <Lang width="lg:w-full">
           <FaBell className="text-darky text-[20px]" />
         </Lang>
       </nav>
-      <Link to="/signin">
+      <NavLink to="/signin">
         <Button
           className="py-5 px-12 text-[16px] font-montserrat font-normal"
           width="w-38"
@@ -36,7 +72,7 @@ export default function LargeNav() {
           type="submit"
           name="Sign In"
         />
-      </Link>
+      </NavLink>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Logo from "./Logo";
 
 export default function Footer() {
@@ -8,42 +8,78 @@ export default function Footer() {
         <div className="flex justify-between border-b border-[#ffffff1a] pb-8.75 items-center">
           <Logo className="text-white" />
           <div className="hidden lg:flex gap-10 ">
-            <Link
+            <NavLink
               to="/"
-              className="font-normal font-montserrat text-[16px] opacity-50 hover:opacity-100"
+              className={({ isActive }) =>
+                `text-white text-[16px] font-montserrat font-normal pb-1 transition-all duration-300 ${
+                  isActive
+                    ? "opacity-100 border-b-2 border-white font-semibold"
+                    : "opacity-50 hover:opacity-100"
+                }`
+              }
             >
               Home
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/search"
-              className="font-normal font-montserrat text-[16px] opacity-50 hover:opacity-100"
+              className={({ isActive }) =>
+                `text-white text-[16px] font-montserrat font-normal pb-1 transition-all duration-300 ${
+                  isActive
+                    ? "opacity-100 border-b-2 border-white font-semibold"
+                    : "opacity-50 hover:opacity-100"
+                }`
+              }
             >
               Search
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/wishlist"
-              className="font-normal font-montserrat text-[16px] opacity-50 hover:opacity-100"
+              className={({ isActive }) =>
+                `text-white text-[16px] font-montserrat font-normal pb-1 transition-all duration-300 ${
+                  isActive
+                    ? "opacity-100 border-b-2 border-white font-semibold"
+                    : "opacity-50 hover:opacity-100"
+                }`
+              }
             >
               Wishlist
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/mycart"
-              className="font-normal font-montserrat text-[16px] opacity-50 hover:opacity-100"
+              className={({ isActive }) =>
+                `text-white text-[16px] font-montserrat font-normal pb-1 transition-all duration-300 ${
+                  isActive
+                    ? "opacity-100 border-b-2 border-white font-semibold"
+                    : "opacity-50 hover:opacity-100"
+                }`
+              }
             >
               My cart
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/signin"
-              className="font-normal font-montserrat text-[16px] opacity-50 hover:opacity-100"
+              className={({ isActive }) =>
+                `text-white text-[16px] font-montserrat font-normal pb-1 transition-all duration-300 ${
+                  isActive
+                    ? "opacity-100 border-b-2 border-white font-semibold"
+                    : "opacity-50 hover:opacity-100"
+                }`
+              }
             >
               Sign In
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/signup"
-              className="font-normal font-montserrat text-[16px] opacity-50 hover:opacity-100"
+              className={({ isActive }) =>
+                `text-white text-[16px] font-montserrat font-normal pb-1 transition-all duration-300 ${
+                  isActive
+                    ? "opacity-100 border-b-2 border-white font-semibold"
+                    : "opacity-50 hover:opacity-100"
+                }`
+              }
             >
               Sign Up
-            </Link>
+            </NavLink>
           </div>
         </div>
         <p className="pt-5 text-[12px] font-normal font-montserrat opacity-70">
