@@ -1,6 +1,6 @@
 export default function Pagination() {
   return (
-    <div className="w-full flex justify-between items-center">
+    <div className="w-full flex flex-col md:flex-row gap-5 justify-between items-center">
       <div className="flex justify-center items-center gap-1 text-[#5C5F6A] font-medium font-inter text-[14px]">
         <span>Showing 1-9 of</span>
         <span>36 results.</span>
