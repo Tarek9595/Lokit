@@ -58,7 +58,9 @@ export default function About() {
           <div className="absolute -bottom-2 right-0 w-fit flex gap-1.5 items-center bg-darky px-2">
             <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
             <div className="w-2 h-2 rounded-full bg-white"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-white"></div>
             <div className="w-3 h-3 rounded-full bg-white"></div>
+            <div className="w-3.5 h-3.5 rounded-full bg-white"></div>
           </div>
         </div>
 

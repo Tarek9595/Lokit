@@ -146,7 +146,7 @@ export default function ShopCaty() {
                     className="w-full h-full object-cover"
                   />
                   <div
-                    className="w-8 h-8 rounded-full bg-white flex justify-center items-center absolute top-2 right-7 shadow-md cursor-pointer"
+                    className="w-8 h-8 rounded-full bg-white flex justify-center items-center absolute top-2 right-2 shadow-md cursor-pointer"
                     onClick={() => toggleLike(index)}
                   >
                     {likedItems[index] ? (
