@@ -352,7 +352,7 @@ export default function SearchShoping() {
                     ${el.price}
                   </span>
                   {el.soldOut && (
-                    <span className="text-red-500 text-[10px] font-bold uppercase tracking-tight bg-red-50 px-2 py-1 rounded">
+                    <span className="text-red-500 text-[10px] font-bold uppercase tracking-tight  px-2 py-1 rounded">
                       Almost Sold Out
                     </span>
                   )}
