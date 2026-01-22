@@ -112,14 +112,14 @@ export default function SearchShoping() {
               </div>
 
               <div className="flex flex-col gap-4 px-1">
-                <div className="flex justify-between items-start gap-2">
-                  <div className="flex flex-col gap-1">
+                <div className="flex flex-col lg:flex-row justify-between items-start gap-2">
+                  <div className="flex flex-col gap-1 order-2 lg:order-1">
                     <h1 className="text-darky font-semibold font-montserrat text-[18px] leading-tight truncate w-40 md:w-45">
                       {el.catName}
                     </h1>
                     <p className="text-gray-400 text-sm">{el.brand}</p>
                   </div>
-                  <div className="flex text-darky text-[14px] pt-1">
+                  <div className="flex text-darky text-[14px] pt-1 order-1 lg:order-1">
                     <MdOutlineStar />
                     <MdOutlineStar />
                     <MdOutlineStar />
