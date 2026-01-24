@@ -1,13 +1,5 @@
 import { useState } from "react";
-import imgOne from "../assets/img/shop/shop-1.png";
-import imgTwo from "../assets/img/shop/shop-2.png";
-import imgThree from "../assets/img/shop/shop-3.png";
-import imgFour from "../assets/img/shop/shop-4.png";
-import imgFive from "../assets/img/shop/shop-5.png";
-import imgSix from "../assets/img/shop/shop-6.png";
-import imgSeven from "../assets/img/shop/shop-7.png";
-import imgEight from "../assets/img/shop/shop-8.png";
-import imgNine from "../assets/img/shop/shop-9.png";
+import { products } from "../data";
 import { IoIosHeartEmpty, IoMdHeart } from "react-icons/io";
 import { MdOutlineStar, MdOutlineStarBorder } from "react-icons/md";
 
@@ -16,90 +8,15 @@ import {} from "react-icons/io";
 export default function ShopCaty() {
   const [likedItems, setLikedItems] = useState({});
 
-  const products = [
-    {
-      catName: "Nike Women’s Tracksuit",
-      brand: "Nike",
-      price: "95.50",
-      rate: 5,
-      soldOut: false,
-      img: imgOne,
-    },
-    {
-      catName: "Roller Rabbit",
-      brand: "Zara",
-      price: "980.00",
-      rate: 4,
-      soldOut: false,
-      img: imgTwo,
-    },
-    {
-      catName: "Roller Rabbit",
-      brand: "Zara",
-      price: "300.50",
-      rate: 4,
-      soldOut: false,
-      img: imgThree,
-    },
-    {
-      catName: "Roller Rabbit",
-      brand: "Gucci",
-      price: "30.500",
-      rate: 5,
-      soldOut: false,
-      img: imgFour,
-    },
-    {
-      catName: "Roller Rabbit",
-      brand: "Zara",
-      price: "200.00",
-      rate: 5,
-      soldOut: false,
-      img: imgFive,
-    },
-    {
-      catName: "Roller Rabbit",
-      brand: "Nike",
-      price: "100.00",
-      rate: 4,
-      soldOut: true,
-      img: imgSix,
-    },
-    {
-      catName: "Nike Women’s Tracksuit",
-      brand: "Nike",
-      price: "95.50",
-      rate: 5,
-      soldOut: false,
-      img: imgSeven,
-    },
-    {
-      catName: "Roller Rabbit",
-      brand: "Zara",
-      price: "980.00",
-      rate: 4,
-      soldOut: false,
-      img: imgEight,
-    },
-    {
-      catName: "Roller Rabbit",
-      brand: "Zara",
-      price: "300.50",
-      rate: 4,
-      soldOut: false,
-      img: imgNine,
-    },
-  ];
+  const [activeCategory, setActiveCategory] = useState("All");
 
-  const [activeCategory, setActiveCategory] = useState("Women's Fashion");
+  const categories = [...new Set(products.map((p) => p.category))];
+  console.log(categories);
 
-  const categories = [
-    "Men's Fashion",
-    "Women's Fashion",
-    "Unisex",
-    "Kids",
-    "Sports Wear",
-  ];
+  const filteredProducts =
+    activeCategory === "All"
+      ? products // لو "الكل" رجع المصفوفة الأصلية كلها
+      : products.filter((product) => product.category === activeCategory); // لو قسم معين فلتر عليه
 
   const toggleLike = (index) => {
     setLikedItems((prev) => ({
@@ -110,6 +27,18 @@ export default function ShopCaty() {
   return (
     <div className="flex flex-col gap-12.5">
       <div className="flex flex-wrap justify-center gap-8 mt-10">
+        <div className="w-full flex justify-center items-center">
+          <button
+            onClick={() => setActiveCategory("All")}
+            className={`px-8 py-4 rounded-[10px] text-lg transition-all duration-300 cursor-pointer ${
+              activeCategory === "All"
+                ? "bg-[#212A2F] text-white shadow-2xl -translate-y-1"
+                : "bg-[#F0F1F2] text-[#8A8A8A] hover:bg-gray-200"
+            }`}
+          >
+            All Products
+          </button>
+        </div>
         {categories.map((cat) => {
           const isActive = activeCategory === cat;
 
@@ -132,8 +61,8 @@ export default function ShopCaty() {
         })}
       </div>
       <div className="w-full bg-[#4444440A] py-10">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-10 gap-x-6 place-items-center">
-          {products.map((el, index) => {
+        <div className="container h-[160dvh] overflow-auto mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-10 gap-x-6 place-items-center">
+          {filteredProducts.map((el, index) => {
             return (
               <div
                 key={index}
