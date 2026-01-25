@@ -1,7 +1,23 @@
-export default function MyForm({ children, mygap }) {
+import { Formik, Form } from "formik";
+
+export default function MyForm({
+  children,
+  mygap,
+  initialValues,
+  validationSchema,
+  onSubmit,
+}) {
   return (
-    <fieldset className={`fieldset ${mygap ? mygap : "gap-6"}`}>
-      {children}
-    </fieldset>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={onSubmit}
+    >
+      {(formikProps) => (
+        <Form className={`fieldset ${mygap ? mygap : "gap-6"} w-full`}>
+          {typeof children === "function" ? children(formikProps) : children}
+        </Form>
+      )}
+    </Formik>
   );
 }
