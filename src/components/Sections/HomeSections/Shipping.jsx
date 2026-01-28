@@ -1,7 +1,7 @@
-import starHand from "../assets/img/icons/starhand.svg";
-import medal from "../assets/img/icons/medal.svg";
-import vector from "../assets/img/icons/Vector.svg";
-import telecom from "../assets/img/icons/telecom.svg";
+import starHand from "../../../assets/img/icons/starhand.svg";
+import medal from "../../../assets/img/icons/medal.svg";
+import vector from "../../../assets/img/icons/Vector.svg";
+import telecom from "../../../assets/img/icons/telecom.svg";
 export default function Shipping() {
   return (
     <section className="w-full bg-[#4444440A] py-10 md:py-16">

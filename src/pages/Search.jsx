@@ -1,47 +1,8 @@
-// import { Link } from "react-router-dom";
-// import Filtered from "../components/Filtered";
-// import Footer from "../components/Footer";
-// import MainHeader from "../components/MainHeader";
-// import SearchShoping from "../components/SearchShoping";
-// import { LiaAngleRightSolid } from "react-icons/lia";
-
-// export default function Search() {
-//   return (
-//     <div className="flex flex-col min-h-screen">
-//       <MainHeader />
-
-//       <main className="flex flex-col items-center">
-//         <div className="flex flex-col gap-3 justify-between container font-light pt-10 bg-[#EDF1F3]">
-//           <h1 className="uppercase font-jost text-[60px] text-darky tracking-wider">
-//             search
-//           </h1>
-//           <div className="flex gap-1.5 font-lato text-[#3A3A3A] text-[16px]">
-//             <Link to="/">
-//               <span className="hover:underline">Home</span>
-//             </Link>
-//             <LiaAngleRightSolid />
-//             <Link to="/search">
-//               <span className="hover:underline">Search</span>
-//             </Link>
-//           </div>
-//         </div>
-
-//         <div className="flex flex-col md:flex-row justify-between container">
-//           <Filtered />
-//           <SearchShoping />
-//         </div>
-//       </main>
-
-//       <Footer />
-//     </div>
-//   );
-// }
-
+import Footer from "../components/Layout/Footer";
+import MainHeader from "../components/Layout/Header/MainHeader";
+import Filtered from "../components/Sections/SearchSections/Filtered";
+import SearchShoping from "../components/Layout/SearchShoping";
 import { Link } from "react-router-dom";
-import Filtered from "../components/Filtered";
-import Footer from "../components/Footer";
-import MainHeader from "../components/MainHeader";
-import SearchShoping from "../components/SearchShoping";
 import { LiaAngleRightSolid } from "react-icons/lia";
 
 export default function Search() {

@@ -1,11 +1,11 @@
-import Lang from "../components/Lang";
-import Logo from "../components/Logo";
-import MyForm from "../components/MyForm";
-import Button from "../components/Button";
-import MyInput from "../components/MyInput";
+import Lang from "../components/UI/Lang";
+import Logo from "../components/UI/Logo";
+import MyForm from "../components/UI/MyForm";
+import Button from "../components/UI/Button";
+import MyInput from "../components/UI/MyInput";
+import MyCarousel from "../components/Layout/MyCarousel";
 import { MdLock } from "react-icons/md";
 import { Link } from "react-router-dom";
-import MyCarousel from "../components/MyCarousel";
 import { useState } from "react";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 

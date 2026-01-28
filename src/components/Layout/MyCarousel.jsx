@@ -1,7 +1,7 @@
-import signinImg from "../assets/img/login-pics/boy-pic.png";
-import signupImg from "../assets/img/login-pics/sign-up.png";
-import forgetImg from "../assets/img/login-pics/forget-password.png";
-import boyImg from "../assets/img/login-pics/sign-in.png";
+import signinImg from "../../assets/img/login-pics/sign-in.png";
+import signupImg from "../../assets/img/login-pics/sign-up.png";
+import forgetImg from "../../assets/img/login-pics/forget-password.png";
+import boyImg from "../../assets/img/login-pics/boy-pic.png";
 
 export default function MyCarousel(props) {
   return (

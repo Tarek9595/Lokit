@@ -1,5 +1,5 @@
-import cstOne from "../assets/img/cst-review/cst-1.png";
-import cstTwo from "../assets/img/cst-review/cst-2.png";
+import cstOne from "../../../assets/img/cst-review/cst-1.png";
+import cstTwo from "../../../assets/img/cst-review/cst-2.png";
 import { FaStar } from "react-icons/fa6";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 

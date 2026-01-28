@@ -1,8 +1,8 @@
-import Lang from "../components/Lang";
-import Logo from "../components/Logo";
+import Lang from "../components/UI/Lang";
+import Logo from "../components/UI/Logo";
 import Checked from "../assets/CheckPadge.svg";
+import Button from "../components/UI/Button";
 import { Link } from "react-router-dom";
-import Button from "../components/Button";
 
 export default function Successfully() {
   return (

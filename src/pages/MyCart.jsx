@@ -1,5 +1,5 @@
-import Footer from "../components/Footer";
-import MainHeader from "../components/MainHeader";
+import Footer from "../components/Layout/Footer";
+import MainHeader from "../components/Layout/Header/MainHeader";
 export default function MyCart() {
   return (
     <>

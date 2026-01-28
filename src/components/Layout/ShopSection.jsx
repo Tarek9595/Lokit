@@ -1,5 +1,5 @@
 import ShopCaty from "./ShopCaty";
-import ShopHead from "./ShopHead";
+import ShopHead from "../Sections/HomeSections/ShopHead";
 
 export default function ShopSection() {
   return (

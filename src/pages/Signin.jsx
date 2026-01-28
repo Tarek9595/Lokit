@@ -1,15 +1,15 @@
-import Lang from "../components/Lang";
-import Logo from "../components/Logo";
+import Lang from "../components/UI/Lang";
+import Logo from "../components/UI/Logo";
+import MyForm from "../components/UI/MyForm";
+import Button from "../components/UI/Button";
+import MyInput from "../components/UI/MyInput";
+import MyCarousel from "../components/Layout/MyCarousel";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import { ImAppleinc } from "react-icons/im";
-import MyForm from "../components/MyForm";
-import Button from "../components/Button";
-import MyInput from "../components/MyInput";
 import { IoMdMail } from "react-icons/io";
 import { MdLock } from "react-icons/md";
 import { Link } from "react-router-dom";
-import MyCarousel from "../components/MyCarousel";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 

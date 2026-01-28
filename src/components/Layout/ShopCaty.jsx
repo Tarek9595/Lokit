@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { products } from "../data";
+import { products } from "../../data";
 import { IoIosHeartEmpty, IoMdHeart } from "react-icons/io";
 import { MdOutlineStar, MdOutlineStarBorder } from "react-icons/md";
 
@@ -60,19 +60,20 @@ export default function ShopCaty() {
           );
         })}
       </div>
-      <div className="w-full bg-[#4444440A] py-10">
-        <div className="container h-[160dvh] overflow-auto mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-10 gap-x-6 place-items-center">
+      <div className="w-full bg-[#4444440A] py-10 overflow-hidden">
+        <div className="w-[102%] container h-[160dvh] overflow-auto mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-10 gap-x-6 place-items-center">
           {filteredProducts.map((el, index) => {
             return (
               <div
                 key={index}
                 className="w-full max-w-87.5 bg-white rounded-xl p-4 flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="w-full h-75 relative bg-[#F9F9F9] rounded-lg overflow-hidden">
+                <div className="w-full aspect-3/4 relative bg-[#F9F9F9] rounded-lg overflow-hidden">
                   <img
                     src={el.img}
                     alt={el.catName}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                   <div
                     className="w-8 h-8 rounded-full bg-white flex justify-center items-center absolute top-2 right-2 shadow-md cursor-pointer"

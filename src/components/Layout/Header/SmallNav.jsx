@@ -1,8 +1,8 @@
-import Button from "./Button";
+import Button from "../../UI/Button";
+import Lang from "../../UI/Lang";
 import { Link } from "react-router-dom";
 import { AiOutlineBars } from "react-icons/ai";
 import { useState } from "react";
-import Lang from "./Lang";
 import { FaBell } from "react-icons/fa";
 
 export default function SmallNav() {

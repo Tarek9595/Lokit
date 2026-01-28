@@ -1,8 +1,8 @@
-import CheckBox from "../components/CheckBox";
-import Colors from "../components/Colors";
-import Price from "../components/Price";
-import SearchFilter from "../components/SearchFilter";
-import Sizes from "../components/Sizes";
+import CheckBox from "../../UI/CheckBox";
+import Colors from "../../UI/Colors";
+import Price from "../../UI/Price";
+import Sizes from "../../UI/Sizes";
+import SearchFilter from "../../Sections/SearchSections/SearchFilter";
 
 export default function Filtered() {
   return (

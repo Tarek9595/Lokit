@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { FaBell } from "react-icons/fa";
 
-import Button from "./Button";
-import Lang from "./Lang";
+import Button from "../../UI/Button";
+import Lang from "../../UI/Lang";
 
 export default function LargeNav() {
   let navLg = "lg:flex lg:items-center lg:gap-10";

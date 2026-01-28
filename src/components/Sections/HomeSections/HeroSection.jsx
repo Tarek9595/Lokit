@@ -1,8 +1,8 @@
-import leftImg from "../assets/img/home-pics/home-left.png";
-import rightImg from "../assets/img/home-pics/home-right.png";
-import topImg from "../assets/img/home-pics/home-top.png";
-import bottomImg from "../assets/img/home-pics/home-bottom.png";
-import saleImg from "../assets/img/home-pics/sale.png";
+import leftImg from "../../../assets/img/home-pics/home-left.png";
+import rightImg from "../../../assets/img/home-pics/home-right.png";
+import topImg from "../../../assets/img/home-pics/home-top.png";
+import bottomImg from "../../../assets/img/home-pics/home-bottom.png";
+import saleImg from "../../../assets/img/home-pics/sale.png";
 
 export default function HeroSection() {
   return (

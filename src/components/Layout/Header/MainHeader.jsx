@@ -1,5 +1,5 @@
 import LargeNav from "./LargeNav";
-import Logo from "./Logo";
+import Logo from "../../UI/Logo";
 import SmallNav from "./SmallNav";
 
 export default function MainHeader() {

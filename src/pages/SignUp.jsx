@@ -1,12 +1,11 @@
+import MyForm from "../components/UI/MyForm";
+import MyInput from "../components/UI/MyInput";
+import Button from "../components/UI/Button";
+import Logo from "../components/UI/Logo";
+import Lang from "../components/UI/Lang";
 import { useNavigate, Link } from "react-router-dom";
 import * as Yup from "yup";
 import { useState } from "react";
-import MyForm from "../components/MyForm";
-import MyInput from "../components/MyInput";
-import Button from "../components/Button";
-import Logo from "../components/Logo";
-import Lang from "../components/Lang";
-import MyCarousel from "../components/MyCarousel";
 import { IoMdMail } from "react-icons/io";
 import { MdLock } from "react-icons/md";
 import { FaUser, FaPhone } from "react-icons/fa6";
@@ -14,6 +13,7 @@ import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import { ImAppleinc } from "react-icons/im";
+import MyCarousel from "../components/Layout/MyCarousel";
 
 export default function SignUp() {
   const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import { MdOutlineStar, MdOutlineStarBorder } from "react-icons/md";
 import { IoSearchOutline } from "react-icons/io5";
-import Pagination from "./Pagination";
-import { products } from "../data";
+import Pagination from "../UI/Pagination";
+import { products } from "../../data";
 
 export default function SearchShoping() {
   const categories = [
@@ -21,8 +21,8 @@ export default function SearchShoping() {
         </label>
       </div>
 
-      <div className="w-full bg-[#4444440A] rounded-xl p-6 md:p-12">
-        <div className="h-[120dvh] pr-5 overflow-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-10 justify-items-center">
+      <div className="w-full bg-[#4444440A] rounded-xl p-7 overflow-hidden">
+        <div className="w-[105%] h-[125dvh] pr-5 overflow-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-10 justify-items-center">
           {products.map((el, index) => (
             <div
               key={index}
@@ -33,6 +33,7 @@ export default function SearchShoping() {
                   src={el.img}
                   alt={el.catName}
                   className="object-cover transition-transform hover:scale-105"
+                  loading="lazy"
                 />
               </div>
 
