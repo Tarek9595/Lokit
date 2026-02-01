@@ -1,8 +1,7 @@
-import { useState } from "react";
-import { products } from "../../data";
+import { useState, useMemo } from "react";
+import { products } from "../../Store";
 import { IoIosHeartEmpty, IoMdHeart } from "react-icons/io";
 import { MdOutlineStar, MdOutlineStarBorder } from "react-icons/md";
-
 import {} from "react-icons/io";
 
 export default function ShopCaty() {
@@ -10,62 +9,45 @@ export default function ShopCaty() {
 
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const categories = [...new Set(products.map((p) => p.category))];
-  console.log(categories);
+  const categories = useMemo(() => {
+    return ["All", ...new Set(products.map((p) => p.category))];
+  }, []);
 
-  const filteredProducts =
-    activeCategory === "All"
-      ? products // لو "الكل" رجع المصفوفة الأصلية كلها
-      : products.filter((product) => product.category === activeCategory); // لو قسم معين فلتر عليه
+  const filteredProducts = useMemo(() => {
+    return activeCategory === "All"
+      ? products
+      : products.filter((product) => product.category === activeCategory);
+  }, [activeCategory]);
 
-  const toggleLike = (index) => {
+  const toggleLike = (id) => {
     setLikedItems((prev) => ({
       ...prev,
-      [index]: !prev[index],
+      [id]: !prev[id],
     }));
   };
   return (
     <div className="flex flex-col gap-12.5">
-      <div className="flex flex-wrap justify-center gap-8 mt-10">
-        <div className="w-full flex justify-center items-center">
+      <div className="flex flex-wrap justify-center gap-4 mt-10 px-4">
+        {categories.map((cat) => (
           <button
-            onClick={() => setActiveCategory("All")}
+            key={cat}
+            onClick={() => setActiveCategory(cat)}
             className={`px-8 py-4 rounded-[10px] text-lg transition-all duration-300 cursor-pointer ${
-              activeCategory === "All"
+              activeCategory === cat
                 ? "bg-[#212A2F] text-white shadow-2xl -translate-y-1"
                 : "bg-[#F0F1F2] text-[#8A8A8A] hover:bg-gray-200"
             }`}
           >
-            All Products
+            {cat === "All" ? "All Products" : cat}
           </button>
-        </div>
-        {categories.map((cat) => {
-          const isActive = activeCategory === cat;
-
-          return (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`
-              px-8 py-4 rounded-[10px] text-lg transition-all duration-300 cursor-pointer
-              ${
-                isActive
-                  ? "bg-[#212A2F] text-white shadow-2xl -translate-y-1" // Active Style (Lifted)
-                  : "bg-[#F0F1F2] text-[#8A8A8A] hover:bg-gray-200" // Inactive Style
-              }
-            `}
-            >
-              {cat}
-            </button>
-          );
-        })}
+        ))}
       </div>
       <div className="w-full bg-[#4444440A] py-10 overflow-hidden">
         <div className="w-[102%] container h-[160dvh] overflow-auto mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-10 gap-x-6 place-items-center">
-          {filteredProducts.map((el, index) => {
+          {filteredProducts.map((el) => {
             return (
               <div
-                key={index}
+                key={el.id}
                 className="w-full max-w-87.5 bg-white rounded-xl p-4 flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="w-full aspect-3/4 relative bg-[#F9F9F9] rounded-lg overflow-hidden">
@@ -77,9 +59,9 @@ export default function ShopCaty() {
                   />
                   <div
                     className="w-8 h-8 rounded-full bg-white flex justify-center items-center absolute top-2 right-2 shadow-md cursor-pointer"
-                    onClick={() => toggleLike(index)}
+                    onClick={() => toggleLike(el.id)}
                   >
-                    {likedItems[index] ? (
+                    {likedItems[el.id] ? (
                       <IoMdHeart className="text-darky text-[20px]" />
                     ) : (
                       <IoIosHeartEmpty className="text-darky text-[20px]" />
@@ -95,23 +77,19 @@ export default function ShopCaty() {
                       <p className="text-gray-400 text-sm">{el.brand}</p>
                     </div>
                     <div className="flex text-darky text-sm">
-                      <MdOutlineStar />
-                      <MdOutlineStar />
-                      <MdOutlineStar />
-                      <MdOutlineStar />
-                      <MdOutlineStar />
+                      {[...Array(5)].map((_, i) => (
+                        <MdOutlineStar key={i} />
+                      ))}
                     </div>
                   </div>
                   <div className="flex justify-between items-center mt-2">
                     <span className="text-darky font-bold text-[22px]">
                       ${el.price}
                     </span>
-                    {el.soldOut ? (
+                    {el.soldOut && (
                       <span className="text-red-500 text-[11px] font-medium uppercase tracking-tighter">
                         Almost Sold Out
                       </span>
-                    ) : (
-                      ""
                     )}
                   </div>
                 </div>

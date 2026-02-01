@@ -1,7 +1,7 @@
 import { MdOutlineStar, MdOutlineStarBorder } from "react-icons/md";
 import { IoSearchOutline } from "react-icons/io5";
 import Pagination from "../UI/Pagination";
-import { products } from "../../data";
+import { products } from "../../Store";
 
 export default function SearchShoping() {
   const categories = [

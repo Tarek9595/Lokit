@@ -9,16 +9,19 @@ import ForgetPass from "./pages/ForgetPass";
 import Validate from "./pages/Validate";
 import Reset from "./pages/Reset";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainLayout from "./MainLayout";
 
 export default function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/search" element={<Search />}></Route>
-          <Route path="/wishlist" element={<Wishlist />}></Route>
-          <Route path="/mycart" element={<MyCart />}></Route>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<Home />}></Route>
+            <Route path="/search" element={<Search />}></Route>
+            <Route path="/wishlist" element={<Wishlist />}></Route>
+            <Route path="/mycart" element={<MyCart />}></Route>
+          </Route>
           <Route path="/signin" element={<Signin />} />
           <Route path="/success" element={<Successfully />} />
           <Route path="/signup" element={<SignUp />} />

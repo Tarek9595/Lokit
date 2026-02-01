@@ -1,54 +1,57 @@
+import { nanoid } from "nanoid/non-secure";
+
+// Data
 // Women
-import womenImgOne from "./assets/img/shop/women/shop-1.png";
-import womenImgTwo from "./assets/img/shop/women/shop-2.png";
-import womenImgThree from "./assets/img/shop/women/shop-3.png";
-import womenImgFour from "./assets/img/shop/women/shop-4.png";
-import womenImgFive from "./assets/img/shop/women/shop-5.png";
-import womenImgSix from "./assets/img/shop/women/shop-6.png";
-import womenImgSeven from "./assets/img/shop/women/shop-7.png";
-import womenImgEight from "./assets/img/shop/women/shop-8.png";
-import womenImgNine from "./assets/img/shop/women/shop-9.png";
+import womenImgOne from "../assets/img/shop/women/shop-1.png";
+import womenImgTwo from "../assets/img/shop/women/shop-2.png";
+import womenImgThree from "../assets/img/shop/women/shop-3.png";
+import womenImgFour from "../assets/img/shop/women/shop-4.png";
+import womenImgFive from "../assets/img/shop/women/shop-5.png";
+import womenImgSix from "../assets/img/shop/women/shop-6.png";
+import womenImgSeven from "../assets/img/shop/women/shop-7.png";
+import womenImgEight from "../assets/img/shop/women/shop-8.png";
+import womenImgNine from "../assets/img/shop/women/shop-9.png";
 //   Men
-import menImgOne from "./assets/img/shop/men/shop-1.png";
-import menImgTwo from "./assets/img/shop/men/shop-2.png";
-import menImgThree from "./assets/img/shop/men/shop-3.png";
-import menImgFour from "./assets/img/shop/men/shop-4.png";
-import menImgFive from "./assets/img/shop/men/shop-5.png";
-import menImgSix from "./assets/img/shop/men/shop-6.png";
-import menImgSeven from "./assets/img/shop/men/shop-7.png";
-import menImgEight from "./assets/img/shop/men/shop-8.png";
-import menImgNine from "./assets/img/shop/men/shop-9.png";
+import menImgOne from "../assets/img/shop/men/shop-1.png";
+import menImgTwo from "../assets/img/shop/men/shop-2.png";
+import menImgThree from "../assets/img/shop/men/shop-3.png";
+import menImgFour from "../assets/img/shop/men/shop-4.png";
+import menImgFive from "../assets/img/shop/men/shop-5.png";
+import menImgSix from "../assets/img/shop/men/shop-6.png";
+import menImgSeven from "../assets/img/shop/men/shop-7.png";
+import menImgEight from "../assets/img/shop/men/shop-8.png";
+import menImgNine from "../assets/img/shop/men/shop-9.png";
 // Unisex
-import unisexImgOne from "./assets/img/shop/unisex/shop-1.png";
-import unisexImgTwo from "./assets/img/shop/unisex/shop-2.png";
-import unisexImgThree from "./assets/img/shop/unisex/shop-3.png";
-import unisexImgFour from "./assets/img/shop/unisex/shop-4.png";
-import unisexImgFive from "./assets/img/shop/unisex/shop-5.png";
-import unisexImgSix from "./assets/img/shop/unisex/shop-6.png";
-import unisexImgSeven from "./assets/img/shop/unisex/shop-7.png";
-import unisexImgEight from "./assets/img/shop/unisex/shop-8.png";
-import unisexImgNine from "./assets/img/shop/unisex/shop-9.png";
+import unisexImgOne from "../assets/img/shop/unisex/shop-1.png";
+import unisexImgTwo from "../assets/img/shop/unisex/shop-2.png";
+import unisexImgThree from "../assets/img/shop/unisex/shop-3.png";
+import unisexImgFour from "../assets/img/shop/unisex/shop-4.png";
+import unisexImgFive from "../assets/img/shop/unisex/shop-5.png";
+import unisexImgSix from "../assets/img/shop/unisex/shop-6.png";
+import unisexImgSeven from "../assets/img/shop/unisex/shop-7.png";
+import unisexImgEight from "../assets/img/shop/unisex/shop-8.png";
+import unisexImgNine from "../assets/img/shop/unisex/shop-9.png";
 // Kids
-import kidsImgOne from "./assets/img/shop/kids/shop-1.png";
-import kidsImgTwo from "./assets/img/shop/kids/shop-2.png";
-import kidsImgThree from "./assets/img/shop/kids/shop-3.png";
-import kidsImgFour from "./assets/img/shop/kids/shop-4.png";
-import kidsImgFive from "./assets/img/shop/kids/shop-5.png";
-import kidsImgSix from "./assets/img/shop/kids/shop-6.png";
-import kidsImgSeven from "./assets/img/shop/kids/shop-7.png";
-import kidsImgEight from "./assets/img/shop/kids/shop-8.png";
-import kidsImgNine from "./assets/img/shop/kids/shop-9.png";
+import kidsImgOne from "../assets/img/shop/kids/shop-1.png";
+import kidsImgTwo from "../assets/img/shop/kids/shop-2.png";
+import kidsImgThree from "../assets/img/shop/kids/shop-3.png";
+import kidsImgFour from "../assets/img/shop/kids/shop-4.png";
+import kidsImgFive from "../assets/img/shop/kids/shop-5.png";
+import kidsImgSix from "../assets/img/shop/kids/shop-6.png";
+import kidsImgSeven from "../assets/img/shop/kids/shop-7.png";
+import kidsImgEight from "../assets/img/shop/kids/shop-8.png";
+import kidsImgNine from "../assets/img/shop/kids/shop-9.png";
 // Sports Wear
-import sportsImgOne from "./assets/img/shop/sports/shop-1.png";
-import sportsImgTwo from "./assets/img/shop/sports/shop-2.png";
-import sportsImgThree from "./assets/img/shop/sports/shop-3.png";
-import sportsImgFour from "./assets/img/shop/sports/shop-4.png";
-import sportsImgFive from "./assets/img/shop/sports/shop-5.png";
-import sportsImgSix from "./assets/img/shop/sports/shop-6.png";
-import sportsImgSeven from "./assets/img/shop/sports/shop-7.png";
-import sportsImgEight from "./assets/img/shop/sports/shop-8.png";
-import sportsImgNine from "./assets/img/shop/sports/shop-9.png";
-export const products = [
+import sportsImgOne from "../assets/img/shop/sports/shop-1.png";
+import sportsImgTwo from "../assets/img/shop/sports/shop-2.png";
+import sportsImgThree from "../assets/img/shop/sports/shop-3.png";
+import sportsImgFour from "../assets/img/shop/sports/shop-4.png";
+import sportsImgFive from "../assets/img/shop/sports/shop-5.png";
+import sportsImgSix from "../assets/img/shop/sports/shop-6.png";
+import sportsImgSeven from "../assets/img/shop/sports/shop-7.png";
+import sportsImgEight from "../assets/img/shop/sports/shop-8.png";
+import sportsImgNine from "../assets/img/shop/sports/shop-9.png";
+const rawProducts = [
   // Women
   {
     catName: "Nike Women’s Tracksuit",
@@ -865,3 +868,8 @@ export const products = [
     category: "Sports Wear",
   },
 ];
+export const products = rawProducts.map((product) => ({
+  ...product,
+  id: nanoid(),
+}));
+// Data

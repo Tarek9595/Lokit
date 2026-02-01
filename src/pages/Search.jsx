@@ -1,5 +1,3 @@
-import Footer from "../components/Layout/Footer";
-import MainHeader from "../components/Layout/Header/MainHeader";
 import Filtered from "../components/Sections/SearchSections/Filtered";
 import SearchShoping from "../components/Layout/SearchShoping";
 import { Link } from "react-router-dom";
@@ -8,8 +6,6 @@ import { LiaAngleRightSolid } from "react-icons/lia";
 export default function Search() {
   return (
     <div className="flex flex-col min-h-screen">
-      <MainHeader />
-
       <main className="grow flex flex-col items-center">
         <div className="w-full bg-[#EDF1F3] py-12 md:py-20 lg:py-28 flex justify-center">
           <div className="container flex flex-col items-center justify-center gap-3 px-5 md:px-0">
@@ -33,8 +29,6 @@ export default function Search() {
           <SearchShoping />
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }
