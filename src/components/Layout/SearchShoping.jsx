@@ -4,35 +4,31 @@ import Pagination from "../UI/Pagination";
 import { products } from "../../Store";
 
 export default function SearchShoping() {
-  const categories = [
-    "Men's Fashion",
-    "Women's Fashion",
-    "Unisex",
-    "Kids",
-    "Sports Wear",
-  ];
-
   return (
     <div className="grow flex flex-col gap-8 p-5 md:p-10 lg:p-16">
       <div className="w-full max-w-300 mx-auto">
-        <label className="input input-bordered flex items-center gap-3 w-full h-12 rounded-xl border-[#9797973D]">
+        <label className="input input-bordered flex items-center gap-3 w-full h-12 rounded-xl border-[#9797973D] focus-within:border-darky transition-all">
           <IoSearchOutline className="text-gray-400 text-[18px]" />
-          <input type="text" className="grow" placeholder="Search clothes..." />
+          <input
+            type="text"
+            className="grow outline-none"
+            placeholder="Search clothes..."
+          />
         </label>
       </div>
 
       <div className="w-full bg-[#4444440A] rounded-xl p-7 overflow-hidden">
         <div className="w-[105%] h-[125dvh] pr-5 overflow-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-10 justify-items-center">
-          {products.map((el, index) => (
+          {products.map((el) => (
             <div
-              key={index}
-              className="w-full max-w-95 bg-white rounded-[20px] p-5 flex flex-col gap-4 shadow-sm hover:shadow-md transition-all"
+              key={el.id}
+              className="w-full max-w-95 bg-white rounded-[20px] p-5 flex flex-col gap-4 shadow-sm hover:shadow-md transition-all duration-300"
             >
-              <div className="w-full  relative bg-[#F9F9F9] rounded-xl flex justify-center items-center overflow-hidden">
+              <div className="w-full aspect-square relative bg-[#F9F9F9] rounded-xl flex justify-center items-center overflow-hidden">
                 <img
                   src={el.img}
                   alt={el.catName}
-                  className="object-cover transition-transform hover:scale-105"
+                  className="object-cover w-full h-full transition-transform hover:scale-110"
                   loading="lazy"
                 />
               </div>
@@ -40,26 +36,31 @@ export default function SearchShoping() {
               <div className="flex flex-col gap-4 px-1">
                 <div className="flex flex-col 2xl:flex-row justify-between items-start gap-2">
                   <div className="flex flex-col gap-1 order-1">
-                    <h1 className="text-darky font-semibold font-montserrat text-[12px] xl:text-[18px] leading-tight truncate w-30 xl:w-40 ">
+                    <h1 className="text-darky font-semibold font-montserrat text-[12px] xl:text-[18px] leading-tight truncate w-30 xl:w-40">
                       {el.catName}
                     </h1>
                     <p className="text-gray-400 text-sm">{el.brand}</p>
                   </div>
                   <div className="flex text-darky text-[14px] pt-1 order-2">
-                    <MdOutlineStar />
-                    <MdOutlineStar />
-                    <MdOutlineStar />
-                    <MdOutlineStar />
-                    <MdOutlineStar />
+                    {[...Array(5)].map((_, i) =>
+                      i < el.rate ? (
+                        <MdOutlineStar key={i} />
+                      ) : (
+                        <MdOutlineStarBorder
+                          key={i}
+                          className="text-gray-300"
+                        />
+                      ),
+                    )}
                   </div>
                 </div>
 
                 <div className="flex justify-between 2xl:items-center flex-col 2xl:flex-row">
                   <span className="text-darky font-bold text-[22px]">
-                    ${el.price}
+                    ${Number(el.price).toLocaleString()}
                   </span>
                   {el.soldOut && (
-                    <span className="text-red-500 text-[10px] font-bold uppercase tracking-tight  px-2 py-1 rounded">
+                    <span className="text-red-500 text-[10px] font-bold uppercase tracking-tight px-2 py-1 rounded bg-red-50">
                       Almost Sold Out
                     </span>
                   )}
