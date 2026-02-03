@@ -27,7 +27,7 @@ export default function SearchShoping() {
               <div className="w-full aspect-square relative bg-[#F9F9F9] rounded-xl flex justify-center items-center overflow-hidden">
                 <img
                   src={el.img}
-                  alt={el.catName}
+                  alt={el.name}
                   className="object-cover w-full h-full transition-transform hover:scale-110"
                   loading="lazy"
                 />
@@ -37,7 +37,7 @@ export default function SearchShoping() {
                 <div className="flex flex-col 2xl:flex-row justify-between items-start gap-2">
                   <div className="flex flex-col gap-1 order-1">
                     <h1 className="text-darky font-semibold font-montserrat text-[12px] xl:text-[18px] leading-tight truncate w-30 xl:w-40">
-                      {el.catName}
+                      {el.name}
                     </h1>
                     <p className="text-gray-400 text-sm">{el.brand}</p>
                   </div>

@@ -2,7 +2,6 @@ import { useState, useMemo } from "react";
 import { products } from "../../Store";
 import { IoIosHeartEmpty, IoMdHeart } from "react-icons/io";
 import { MdOutlineStar, MdOutlineStarBorder } from "react-icons/md";
-import {} from "react-icons/io";
 
 export default function ShopCaty() {
   const [likedItems, setLikedItems] = useState({});

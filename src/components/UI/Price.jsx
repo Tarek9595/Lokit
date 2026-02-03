@@ -1,32 +1,59 @@
-import { useState } from "react";
+// import { useState } from "react";
 
-export default function Price() {
-  const [value, setValue] = useState(2500);
+// export default function Price() {
+//   const [value, setValue] = useState(2500);
+//   const max = 5000;
+
+//   const percent = (value / max) * 100;
+
+//   return (
+//     <div className="price-wrapper">
+//       <div className="price-values flex justify-between font-roboto text-[14px] font-medium">
+//         <span>0 EGP</span>
+//         <span>{value} EGP</span>
+//       </div>
+
+//       <input
+//         type="range"
+//         min="0"
+//         max={max}
+//         step="1"
+//         value={value}
+//         onChange={(e) => setValue(Number(e.target.value))}
+//         className="price-slider"
+//         style={{
+//           background: `linear-gradient(
+//             to right,
+//             #000 ${percent}%,
+//             #cfcfcf ${percent}%
+//           )`,
+//         }}
+//       />
+//     </div>
+//   );
+// }
+
+export default function Price({ value, onChange }) {
   const max = 5000;
-
   const percent = (value / max) * 100;
 
   return (
     <div className="price-wrapper">
-      <div className="price-values flex justify-between font-roboto text-[14px] font-medium">
+      <div className="price-values flex justify-between font-roboto text-[14px] font-medium mb-2">
         <span>0 EGP</span>
-        <span>{value} EGP</span>
+        <span className="text-darky font-bold">{value} EGP</span>
       </div>
 
       <input
         type="range"
         min="0"
         max={max}
-        step="1"
+        step="50"
         value={value}
-        onChange={(e) => setValue(Number(e.target.value))}
-        className="price-slider"
+        onChange={(e) => onChange(Number(e.target.value))}
+        className="price-slider w-full cursor-pointer"
         style={{
-          background: `linear-gradient(
-            to right,
-            #000 ${percent}%,
-            #cfcfcf ${percent}%
-          )`,
+          background: `linear-gradient(to right, #000 ${percent}%, #cfcfcf ${percent}%)`,
         }}
       />
     </div>

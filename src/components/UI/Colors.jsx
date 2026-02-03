@@ -1,4 +1,4 @@
-export default function Colors() {
+export default function Colors({ selectedColor, onChange }) {
   const colors = [
     "#292A2D",
     "#F3ECE2",
@@ -21,16 +21,14 @@ export default function Colors() {
           key={color}
           className="cursor-pointer flex justify-center items-center"
         >
-          <input type="radio" name="product-color" className="hidden peer" />
-          <div
-            className="
-              w-6.25 h-6.25 
-              flex justify-center items-center
-              border-2 border-transparent
-              peer-checked:border-black 
-              transition-all duration-200
-            "
-          >
+          <input
+            type="radio"
+            name="color"
+            checked={selectedColor === color}
+            onChange={() => onChange(color)}
+            className="hidden peer"
+          />
+          <div className="w-6.25 h-6.25 flex justify-center items-center border-2 border-transparent peer-checked:border-black transition-all duration-200">
             <div
               className="w-4.25 h-4.25"
               style={{ backgroundColor: color }}
