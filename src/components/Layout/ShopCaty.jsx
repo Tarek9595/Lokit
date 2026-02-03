@@ -2,9 +2,10 @@ import { useState, useMemo } from "react";
 import { products } from "../../Store";
 import { IoIosHeartEmpty, IoMdHeart } from "react-icons/io";
 import { MdOutlineStar, MdOutlineStarBorder } from "react-icons/md";
+import { useWishlist } from "../../Store";
 
 export default function ShopCaty() {
-  const [likedItems, setLikedItems] = useState({});
+  const { setWishListProduct, wishlist, removeWishlistProduct } = useWishlist();
 
   const [activeCategory, setActiveCategory] = useState("All");
 
@@ -18,11 +19,20 @@ export default function ShopCaty() {
       : products.filter((product) => product.category === activeCategory);
   }, [activeCategory]);
 
-  const toggleLike = (id) => {
-    setLikedItems((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
+  const toggleLike = (product) => {
+    const isExist = wishlist.some((item) => item.id === product.id);
+
+    if (isExist) {
+      removeWishlistProduct(product.id);
+    } else {
+      let newProduct = {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        img: product.img,
+      };
+      setWishListProduct(newProduct);
+    }
   };
   return (
     <div className="flex flex-col gap-12.5">
@@ -52,15 +62,15 @@ export default function ShopCaty() {
                 <div className="w-full aspect-3/4 relative bg-[#F9F9F9] rounded-lg overflow-hidden">
                   <img
                     src={el.img}
-                    alt={el.catName}
+                    alt={el.name}
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
                   <div
                     className="w-8 h-8 rounded-full bg-white flex justify-center items-center absolute top-2 right-2 shadow-md cursor-pointer"
-                    onClick={() => toggleLike(el.id)}
+                    onClick={() => toggleLike(el)}
                   >
-                    {likedItems[el.id] ? (
+                    {wishlist.some((item) => item.id === el.id) ? (
                       <IoMdHeart className="text-darky text-[20px]" />
                     ) : (
                       <IoIosHeartEmpty className="text-darky text-[20px]" />
@@ -71,7 +81,7 @@ export default function ShopCaty() {
                   <div className="flex justify-between items-start">
                     <div>
                       <h1 className="text-darky font-semibold font-montserrat text-[18px] leading-tight">
-                        {el.catName}
+                        {el.name}
                       </h1>
                       <p className="text-gray-400 text-sm">{el.brand}</p>
                     </div>

@@ -4659,6 +4659,41 @@ export const products = rawProducts.map((product) => ({
 
 import { create } from "zustand";
 
+export const useLinks = create(() => ({
+  Links: [
+    {
+      id: 1,
+      name: "Orders",
+      path: "/orders",
+    },
+    {
+      id: 2,
+      name: "Wishlist",
+      path: "/wishlist",
+    },
+    {
+      id: 3,
+      name: "Address",
+      path: "/address",
+    },
+    {
+      id: 4,
+      name: "Password",
+      path: "/password",
+    },
+    {
+      id: 5,
+      name: "Account Detail",
+      path: "/account",
+    },
+    {
+      id: 6,
+      name: "Logout",
+      path: "/logout",
+    },
+  ],
+}));
+
 export const useFilterStore = create((set) => ({
   appliedFilters: {
     brands: [],
@@ -4670,4 +4705,19 @@ export const useFilterStore = create((set) => ({
   },
   setFilters: (newFilters) => set({ appliedFilters: newFilters }),
   resetFilters: () => set({ appliedFilters: {} }),
+}));
+
+export const useWishlist = create((set) => ({
+  wishlist: [],
+
+  setWishListProduct: (product) =>
+    set((state) =>
+      state.wishlist.some((item) => item.Id === product.id)
+        ? state
+        : { wishlist: [...state.wishlist, product] },
+    ),
+  removeWishlistProduct: (productID) =>
+    set((state) => ({
+      wishlist: state.wishlist.filter((el) => el.id != productID),
+    })),
 }));
