@@ -4664,32 +4664,32 @@ export const useLinks = create(() => ({
     {
       id: 1,
       name: "Orders",
-      path: "/orders",
+      path: "orders",
     },
     {
       id: 2,
       name: "Wishlist",
-      path: "/wishlist",
+      path: "",
     },
     {
       id: 3,
       name: "Address",
-      path: "/address",
+      path: "address",
     },
     {
       id: 4,
       name: "Password",
-      path: "/password",
+      path: "password",
     },
     {
       id: 5,
       name: "Account Detail",
-      path: "/account",
+      path: "account",
     },
     {
       id: 6,
       name: "Logout",
-      path: "/logout",
+      path: "/",
     },
   ],
 }));
@@ -4720,4 +4720,14 @@ export const useWishlist = create((set) => ({
     set((state) => ({
       wishlist: state.wishlist.filter((el) => el.id != productID),
     })),
+}));
+
+export const useActiveInfo = create((set) => ({
+  activeInfo: {
+    id: 2,
+    name: "Wishlist",
+    path: "",
+  },
+
+  setActiveInfo: (newActivInfo) => set({ activeInfo: newActivInfo }),
 }));
